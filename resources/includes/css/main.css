@@ -164,7 +164,11 @@
 .oog-team{
     min-width: 10%;
 }
-
+.oog-team-social{
+    position: relative; 
+    bottom: 0;
+    width: 100%;
+}
 .oog-roadmap-box{
     background-color: #f9d05b !important;
     color: #bc792f !important;
