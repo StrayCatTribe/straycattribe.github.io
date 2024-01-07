@@ -11,6 +11,12 @@
     top: 0;
     left: 0;
 }
+
+.oog-video{
+    position: relative;
+    top: 0%;
+    left: 50%;
+}
 .oog-intro-cat{
     display: block;
     margin-left: auto;
