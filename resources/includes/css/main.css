@@ -49,6 +49,8 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    max-width: 100%;
+    left: 0%;
     display: flex;
     margin: 0em;
 }
@@ -94,7 +96,7 @@ html {
     border-radius: 50%; /* Optional: for a circular image */
     position: absolute;
     top: -25%;
-    left: 10%;
+    left: 40%;
     z-index: 1;
 
 }
