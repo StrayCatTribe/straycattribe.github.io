@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('falling-images-container');
 
@@ -35,3 +36,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+*/

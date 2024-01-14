@@ -81,11 +81,11 @@
 	<section class="elementor-section elementor-top-section elementor-element elementor-element-cf112ac elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cf112ac" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 		<div class="elementor-container elementor-column-gap-default">
 			<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5410d19" data-id="5410d19" data-element_type="column">
-				<div class="elementor-widget-wrap elementor-element-populated">
-					<section class="elementor-section elementor-inner-section elementor-element elementor-element-849e321 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="849e321" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-							<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-36053bd" data-id="36053bd" data-element_type="column">
-								<div class="elementor-widget-wrap elementor-element-populated">
+				<div class="elementor-widget-wrap elementor-element-populated" style="padding-top: 0">
+					<section style="padding-top: 0" class="elementor-section elementor-inner-section elementor-element elementor-element-849e321 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="849e321" data-element_type="section">
+						<div  style="padding-top: 0"class="elementor-container elementor-column-gap-default">
+							<div style="padding-top: 0" class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-36053bd" data-id="36053bd" data-element_type="column">
+								<div  style="padding-top: 0"class="elementor-widget-wrap elementor-element-populated">
 									<div class="elementor-element elementor-element-0effb78 elementor-widget elementor-widget-image" data-id="0effb78" data-element_type="widget" data-widget_type="image.default">
 										<div class="elementor-widget-container oog-nav-logo">
 											<style>/*! elementor - v3.18.0 - 06-12-2023 */
@@ -277,37 +277,9 @@
 	</section>
 </div>
 
-<script>
-	var shouldMove = true;
-	let lastScrollPosition = 0;
 
-	window.addEventListener('scroll', function() {
-		const scrollPosition = window.scrollY;
-		const transitionPoint = 500;
-		const foregroundImage = document.querySelector('.oog-intro-cat-move');
-		const logoImage = document.querySelector('.oog-intro-logo');
-		const navLogoImage = document.querySelector('.oog-nav-logo');
 
-		if (scrollPosition <= transitionPoint && shouldMove) {
-			if (scrollPosition >= lastScrollPosition) {
-				lastScrollPosition = scrollPosition;
-				foregroundImage.style.transform = `translate(-50%, calc(-40% + ${scrollPosition}px))`;
-				foregroundImage.style.transition = 'transform .2s ease, top 1s ease';
-			} else {
 
-			}
-
-		} else if (shouldMove) {
-			shouldMove = false;
-			foregroundImage.style.transition = 'transform .1s ease, top .1s ease';
-			//foregroundImage.style.transform = `translate(-50%, 0)`;
-			//foregroundImage.style.top = '0';
-			foregroundImage.style.position = 'absolute';
-			logoImage.style.display = `block`;
-			navLogoImage.style.display = `none`;
-		}
-	});
-</script>
 <!--
 716 is image bg
 -->
@@ -1517,5 +1489,28 @@
 </script>
 <script src="resources/content/plugins/elementskit-lite/widgets/init/assets/js/elementor19ce.js?ver=3.0.3" id="elementskit-elementor-js"></script>
 <script src="resources/content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min5829.js?ver=3.15.1" id="e-sticky-js"></script>
+
+<!----BG Music--->
+
+<script>
+
+
+
+	let myAudio = new Audio();
+	myAudio.src = 'resources/audio/bgaudio.mp3';
+
+	function Gameloop() {
+		myAudio.play();
+		if (myAudio.paused == true) {
+			myAudio.play();
+		}
+	}
+
+	window.onload = setInterval(Gameloop, 1000 / 10); // Use Gameloop instead of GameLoop
+
+</script>
+<!----BG Music
+	For the record I think this is a stupid idea -Web developer
+--->
 </body>
 </html>
