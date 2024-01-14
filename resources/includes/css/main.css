@@ -3,10 +3,15 @@
     src: url(../../fonts/insanyburger.ttf);
 }
 
+
+html {
+    background-color: #e3c990;
+}
+
 #myVideo {
     object-fit: cover;
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,6 +40,63 @@
 }
 .oog-intro-background{
     height: 80em;
+}
+.oog-outro-background{
+    height: 50em;
+    background-image: url("../../../resources/images/header_outro.png"); !important;
+    background-color: rgba(227, 201, 144);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    margin: 0em;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+    text-align: center;
+}
+
+.top-row{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    z-index: 2;
+}
+.bottom-row {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    z-index: 0;
+}
+
+.box {
+    width: 15em;
+    height: 10em;
+    background-color: rgba(199, 178, 129, .7); /* Change the background color as needed */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    color: #424242;
+    font-weight: bold;
+   padding-left: 2em;
+    padding-right: 2em;
+}
+
+.center-image {
+    width: 40em; /* Set the width of your image */
+    height: 40em; /* Set the height of your image */
+    object-fit: cover; /* Adjust this property based on your image requirements */
+    border-radius: 50%; /* Optional: for a circular image */
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    z-index: 1;
+
 }
 
 .oog-intro-logo {
