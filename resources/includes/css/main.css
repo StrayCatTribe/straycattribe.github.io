@@ -59,7 +59,7 @@ html {
     bottom: 10px;
     right: 10px;
     padding: 10px;
-    background-color: #3498db;
+    background-color: rgba(219, 189, 130, .5);
     color: #fff;
     border: none;
     cursor: pointer;
