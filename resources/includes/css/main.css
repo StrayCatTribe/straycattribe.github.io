@@ -54,7 +54,16 @@ html {
     display: flex;
     margin: 0em;
 }
-
+#pauseButton{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
 
 .container {
     display: flex;

@@ -1399,6 +1399,8 @@
 
 	</section>
 </div>
+<button id="pauseButton">⏸</button>
+
 
 <link rel='stylesheet' id='mediaelement-css' href='resources/includes/js/mediaelement/mediaelementplayer-legacy.min1f61.css?ver=4.2.17' media='all' />
 <link rel='stylesheet' id='wp-mediaelement-css' href='resources/includes/js/mediaelement/wp-mediaelement.min1e39.css?ver=6.4.2' media='all' />
@@ -1456,21 +1458,34 @@
 <!----BG Music--->
 
 <script>
-
-
-
 	let myAudio = new Audio();
 	myAudio.src = 'resources/audio/bgaudio.mp3';
 
+	let intervalId;
+
 	function Gameloop() {
 		myAudio.play();
-		if (myAudio.paused == true) {
-			myAudio.play();
-		}
 	}
 
-	window.onload = setInterval(Gameloop, 1000 / 10); // Use Gameloop instead of GameLoop
+	window.onload = () => {
+		intervalId = setInterval(Gameloop, 1000 / 10);
 
+		// Add event listener to the pause button
+		const pauseButton = document.getElementById('pauseButton');
+		pauseButton.addEventListener('click', function() {
+			if (myAudio.paused) {
+				myAudio.play();
+				pauseButton.textContent = '⏸';
+				// Resume the interval
+				intervalId = setInterval(Gameloop, 1000 / 10);
+			} else {
+				myAudio.pause();
+				pauseButton.textContent = '▶';
+				// Pause the interval
+				clearInterval(intervalId);
+			}
+		});
+	};
 </script>
 <!----BG Music
 	For the record I think this is a stupid idea -Web developer
