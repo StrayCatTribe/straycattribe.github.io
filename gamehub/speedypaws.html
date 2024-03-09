@@ -60,25 +60,28 @@
 
     <link rel="stylesheet" href="game-detail-assets/index-6b24d4e1.css">
 
+    <script src="Data/speedyPawsQ1.loader.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
                 var unityCanvas = document.querySelector("#unity-canvas");
+                var playButton = document.querySelector("#play-button");
 
                 console.log("button clicked")
                 // Remove the display: none style to make it visible
                 unityCanvas.style.display = "block";
+                playButton.style.display = "none";
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/Tanks-PP-Q6-LessAzur.data",
-                    frameworkUrl: "Build/Tanks-PP-Q6-LessAzur.framework.js",
-                    codeUrl: "Build/Tanks-PP-Q6-LessAzur.wasm",
+                    dataUrl: "Data/speedyPawsQ1.data",
+                    frameworkUrl: "Data/speedyPawsQ1.framework.js",
+                    codeUrl: "Data/speedyPawsQ1.wasm",
                     streamingAssetsUrl: "StreamingAssets",
-                    companyName: "DefaultCompany",
-                    productName: "123",
-                    productVersion: "",
-                    matchWebGLToCanvasSize: true, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+                    companyName: "StrayCatTribe",
+                    productName: "SpeedyPaws",
+                    productVersion: "0.1",
+                    matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                     devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
                 });
             });
@@ -88,14 +91,10 @@
                 meta.name = 'viewport';
                 meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
                 document.getElementsByTagName('head')[0].appendChild(meta);
-
-
             }
-
-
         });
-
     </script>
+
 </head>
 <body>
 
@@ -173,13 +172,6 @@
             </div>
         </div>
 
-
-        <script src="Build/Tanks-PP-Q6-LessAzur.loader.js"></script>
-        <script>
-
-        </script>
-
-
         <div data-v-a0b16e71="" class="view">
             <div data-v-06385fd8="" class="airdrop">
 
@@ -188,7 +180,7 @@
                     <div data-v-06385fd8="" class="background">
                         <img data-v-06385fd8="" src="images/speedy-paws/gamebanner.png">
                     </div>
-                    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #BF2D00; z-index: 1000; display: none;"></canvas>
+                    <canvas id="unity-canvas" width=1640 height=600 style="width: 1640px; height: 600px; background: #BF2D00; z-index: 1000; display: none;"></canvas>
 
                     <h6 data-v-06385fd8="" class="title">Speedy Paws</h6>
                     <div data-v-06385fd8="" class="describe">Vroom Vroom!</div>
