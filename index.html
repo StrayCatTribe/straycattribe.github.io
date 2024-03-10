@@ -287,6 +287,23 @@
 <!--
 716 is image bg
 -->
+
+<style>
+
+	.hover-image {
+		display: none; /* hide the hover image by default */
+	}
+
+	.image-container:hover .default-image {
+		display: none; /* hide the default image when hovering over the container */
+	}
+
+	.image-container:hover .hover-image {
+		display: block; /* display the hover image when hovering over the container */
+	}
+
+</style>
+
 <div data-elementor-type="wp-post" data-elementor-id="716" class="elementor elementor-716" data-elementor-post-type="envato_tk_templates">
 
 <section class="elementor-section elementor-top-section elementor-element elementor-element-6ed4555 elementor-section-boxed elementor-section-height-default elementor-section-height-default oog-intro-background" data-id="6ed4555" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -295,9 +312,18 @@
 
 	<video autoplay muted loop id="myVideo">
 		<source src="resources/video/lofi.mp4" type="video/mp4">
+
 	</video>
 
-	<img class="oog-intro-logo" src="resources/images/logo4x.png">
+	<div style="z-index:99999999; position: inherit; width: 100%; max-width: fit-content; margin-left: auto; margin-right: auto; margin-top: 40em">
+		<a href="/gamehub">
+			<div class="image-container">
+				<img src="resources/images/playEarnLink.png" class="default-image">
+				<img src="resources/images/playEarn.png" class="hover-image">
+			</div>
+		</a>
+	</div>
+
 
 		<div class="elementor-container elementor-column-gap-default">
 			<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-892e315" data-id="892e315" data-element_type="column">
