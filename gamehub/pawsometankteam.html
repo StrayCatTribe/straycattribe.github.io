@@ -73,10 +73,6 @@
                 ticket.style.display = "block";
             });
 
-            document.documentElement.requestFullscreen()
-                .catch(err => {
-                    console.error('Failed to enter fullscreen mode:', err);
-                });
 
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
@@ -87,6 +83,11 @@
                 // Remove the display: none style to make it visible
                 unityCanvas.style.display = "block";
                 playButton.style.display = "none";
+
+                document.documentElement.requestFullscreen()
+                    .catch(err => {
+                        console.error('Failed to enter fullscreen mode:', err);
+                    });
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
                     dataUrl: "Data/tankb1.data",
