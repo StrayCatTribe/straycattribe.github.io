@@ -84,6 +84,11 @@
                 unityCanvas.style.display = "block";
                 playButton.style.display = "none";
 
+                document.documentElement.requestFullscreen()
+                    .catch(err => {
+                        console.error('Failed to enter fullscreen mode:', err);
+                    });
+
                 createUnityInstance(document.querySelector("#unity-canvas"), {
                     dataUrl: "Data/kittykaboom.data",
                     frameworkUrl: "Data/kittykaboom.framework.js",

@@ -72,6 +72,12 @@
                 connect.style.display = "none";
                 ticket.style.display = "block";
             });
+
+            document.documentElement.requestFullscreen()
+                .catch(err => {
+                    console.error('Failed to enter fullscreen mode:', err);
+                });
+
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
                 var unityCanvas = document.querySelector("#unity-canvas");
