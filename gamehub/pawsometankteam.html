@@ -63,6 +63,15 @@
     <script src="Data/tankb1.loader.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#wallet-connect").addEventListener("click", function() {
+                // Get the unity-canvas element
+                var connect = document.querySelector("#wallet-connect");
+                var ticket = document.querySelector("#ticket-counter");
+
+                // Remove the display: none style to make it visible
+                connect.style.display = "none";
+                ticket.style.display = "block";
+            });
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
                 var unityCanvas = document.querySelector("#unity-canvas");
@@ -106,11 +115,22 @@
                                                     class="router-link-active router-link-exact-active logo">
                 <img data-v-1f5e3d8c="" src="game-detail-assets/logo-ba4e9fbb-svg.png" style="width: 100%; height: 100%;"></a>
 
-                <ul data-v-1f5e3d8c="" class="menu wallet">
+                <ul data-v-1f5e3d8c="" id="wallet-connect" class="menu wallet">
                     <li data-v-1f5e3d8c="" class="">
                         <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-wallet"></i></i>
                         </div>
                         <div data-v-1f5e3d8c="" class="name">Connect your wallet</div>
+                    </li>
+                </ul>
+
+                <ul data-v-1f5e3d8c="" id="ticket-counter" class="menu wallet" style="display: none;">
+                    <li data-v-1f5e3d8c="" class="">
+                        <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-ticket"></i></i>
+                        </div>
+                        <div>
+                            <progress id="file" value="32" max="100" style="width: 80%;"> 32% </progress>
+                            <div data-v-1f5e3d8c="" class="name" style="text-align: center; padding-right: 2em;">323 / <span style="font-weight: bolder">1000</span></div>
+                        </div>
                     </li>
                 </ul>
 
