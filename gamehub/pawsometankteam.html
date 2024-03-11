@@ -62,6 +62,22 @@
 
     <script src="Data/tankb1.loader.js"></script>
     <script>
+
+        document.addEventListener("fullscreenchange", function(event) {
+            // Check if the document is in fullscreen mode
+            if (document.fullscreenElement) {
+                //
+                //
+                //
+            } else {
+                var contentColumn = document.querySelector("#content-column");
+                var navigation = document.querySelector("#navigation-column");
+
+                contentColumn.style.marginLeft = "15.03906vw";
+                navigation.style.display = "block";
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#wallet-connect").addEventListener("click", function() {
                 // Get the unity-canvas element
@@ -116,7 +132,7 @@
 
 <div id="app" data-v-app="">
     <div data-v-a0b16e71="" class="container">
-        <div data-v-1f5e3d8c="" data-v-a0b16e71="" class="navigation-bar">
+        <div data-v-1f5e3d8c="" data-v-a0b16e71="" id="navigation-column" class="navigation-bar">
             <div data-v-1f5e3d8c="" class="head"><a data-v-1f5e3d8c="" aria-current="page"
                                                     href="index.html"
                                                     class="router-link-active router-link-exact-active logo">
@@ -202,7 +218,7 @@
             </div>
         </div>
 
-        <div data-v-a0b16e71="" class="view">
+        <div data-v-a0b16e71="" id="content-column" class="view">
             <div data-v-06385fd8="" class="airdrop">
 
 

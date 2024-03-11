@@ -6,8 +6,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitty Kaboom - Stray Cat Tribe HUB</title>
-    <link rel="stylesheet" href="game-detail-assets/index-21333c2e.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="game-detail-assets/index-21333c2e.css">
 
 
 
@@ -62,6 +63,22 @@
 
     <script src="Data/kittykaboom.loader.js"></script>
     <script>
+
+        document.addEventListener("fullscreenchange", function(event) {
+            // Check if the document is in fullscreen mode
+            if (document.fullscreenElement) {
+                //
+                //
+                //
+            } else {
+                var contentColumn = document.querySelector("#content-column");
+                var navigation = document.querySelector("#navigation-column");
+
+                contentColumn.style.marginLeft = "15.03906vw";
+                navigation.style.display = "block";
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
 
             document.querySelector("#wallet-connect").addEventListener("click", function() {
@@ -74,15 +91,23 @@
                 ticket.style.display = "block";
             });
 
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+
+                }
+            });
+
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
                 var unityCanvas = document.querySelector("#unity-canvas");
                 var playButton = document.querySelector("#play-button");
+                var contentColumn = document.querySelector("#content-column");
+                var navigation = document.querySelector("#navigation-column");
 
-                console.log("button clicked")
-                // Remove the display: none style to make it visible
                 unityCanvas.style.display = "block";
                 playButton.style.display = "none";
+                contentColumn.style.marginLeft = 0;
+                navigation.style.display = "none";
 
                 document.documentElement.requestFullscreen()
                     .catch(err => {
@@ -101,6 +126,7 @@
                     // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
                 });
             });
+
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 // Mobile device style: fill the whole browser client area with the game canvas:
                 var meta = document.createElement('meta');
@@ -114,8 +140,8 @@
 <body>
 
 <div id="app" data-v-app="">
-    <div data-v-a0b16e71="" class="container">
-        <div data-v-1f5e3d8c="" data-v-a0b16e71="" class="navigation-bar">
+    <div data-v-a0b16e71="" class="container" >
+        <div data-v-1f5e3d8c="" data-v-a0b16e71="" id="navigation-column" class="navigation-bar" >
             <div data-v-1f5e3d8c="" class="head"><a data-v-1f5e3d8c="" aria-current="page"
                                                     href="index.html"
                                                     class="router-link-active router-link-exact-active logo">
@@ -206,7 +232,7 @@
         </script>
 
 
-        <div data-v-a0b16e71="" class="view">
+        <div data-v-a0b16e71="" id="content-column" class="view">
             <div data-v-06385fd8="" class="airdrop">
 
 
