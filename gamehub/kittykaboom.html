@@ -63,31 +63,7 @@
 
     <script src="Data/kittykaboom.loader.js"></script>
     <script>
-
-        document.addEventListener("fullscreenchange", function(event) {
-            // Check if the document is in fullscreen mode
-            if (document.fullscreenElement) {
-                //
-                //
-                //
-            } else {
-                var contentColumn = document.querySelector("#content-column");
-                var navigation = document.querySelector("#navigation-column");
-
-                contentColumn.style.marginLeft = "15.03906vw";
-                navigation.style.display = "block";
-            }
-        });
-
         document.addEventListener("DOMContentLoaded", function() {
-
-
-            document.addEventListener("keydown", function(event) {
-                if (event.key === "Escape") {
-
-                }
-            });
-
             document.querySelector("#play-button").addEventListener("click", function() {
                 // Get the unity-canvas element
                 var unityCanvas = document.querySelector("#unity-canvas");
@@ -97,13 +73,6 @@
 
                 unityCanvas.style.display = "block";
                 playButton.style.display = "none";
-                contentColumn.style.marginLeft = 0;
-                navigation.style.display = "none";
-
-                document.documentElement.requestFullscreen()
-                    .catch(err => {
-                        console.error('Failed to enter fullscreen mode:', err);
-                    });
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
                     dataUrl: "Data/kittykaboom.data",
