@@ -61,29 +61,17 @@
     <link rel="stylesheet" href="game-detail-assets/index-6b24d4e1.css">
 
     <script>
-        document.addEventListener("fullscreenchange", function(event) {
-            // Check if the document is in fullscreen mode
-            if (document.fullscreenElement) {
-                //
-                //
-                //
-            } else {
-                var contentColumn = document.querySelector("#content-column");
-                var navigation = document.querySelector("#navigation-column");
-
-                contentColumn.style.marginLeft = "15.03906vw";
-                navigation.style.display = "block";
-            }
-        });
-
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#play-button").addEventListener("click", function() {
+                // Get the unity-canvas element
+                var unityContainer = document.querySelector("#unity-container");
                 var playButton = document.querySelector("#play-button");
-                var gatedText = document.querySelector("#gated-info");
+                var contentColumn = document.querySelector("#content-column");
 
-                console.log("button clicked")
+                unityContainer.style.display = "block";
                 playButton.style.display = "none";
-                gatedText.style.display ="block";
+                contentColumn.style.display = "none";
+
             });
         });
     </script>
@@ -169,6 +157,140 @@
             </div>
         </div>
 
+        <!---UNITY--->
+
+        <style>
+            body { padding: 0; margin: 0 }
+            #unity-container { position: absolute }
+            #unity-container.unity-desktop { left: 55%; top: 50%; transform: translate(-50%, -50%) }
+            #unity-container.unity-mobile { width: 100%; height: 100% }
+            #unity-canvas { background: #000002 }
+            .unity-mobile #unity-canvas { width: 100%; height: 100% }
+            #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+            #unity-logo { width: 154px; height: 130px; background: url('TemplateData/unity-logo-dark.png') no-repeat center }
+            #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center }
+            #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('TemplateData/progress-bar-full-dark.png') no-repeat center }
+            #unity-footer { position: relative }
+            .unity-mobile #unity-footer { display: none }
+            #unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('TemplateData/webgl-logo.png') no-repeat center }
+            #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+            #unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('TemplateData/fullscreen-button.png') no-repeat center }
+            #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+        </style>
+        <body>
+        <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width=1280 height=720></canvas>
+            <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                </div>
+            </div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+                <div id="unity-webgl-logo"></div>
+                <div id="unity-fullscreen-button"></div>
+                <div id="unity-build-title">SpeedyPaws</div>
+            </div>
+        </div>
+        <script>
+            var container = document.querySelector("#unity-container");
+            var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+            var warningBanner = document.querySelector("#unity-warning");
+
+            // Shows a temporary message banner/ribbon for a few seconds, or
+            // a permanent error message on top of the canvas if type=='error'.
+            // If type=='warning', a yellow highlight color is used.
+            // Modify or remove this function to customize the visually presented
+            // way that non-critical warnings and error messages are presented to the
+            // user.
+            function unityShowBanner(msg, type) {
+                function updateBannerVisibility() {
+                    warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+                }
+                var div = document.createElement('div');
+                div.innerHTML = msg;
+                warningBanner.appendChild(div);
+                if (type == 'error') div.style = 'background: red; padding: 10px;';
+                else {
+                    if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                    setTimeout(function() {
+                        warningBanner.removeChild(div);
+                        updateBannerVisibility();
+                    }, 5000);
+                }
+                updateBannerVisibility();
+            }
+
+            var buildUrl = "Data/Speedy";
+            var loaderUrl = buildUrl + "/speedypaws.loader.js";
+            var config = {
+                dataUrl: buildUrl + "/speedypaws.data.unityweb",
+                frameworkUrl: buildUrl + "/speedypaws.framework.js.unityweb",
+                codeUrl: buildUrl + "/speedypaws.wasm.unityweb",
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "StrayCatTribe",
+                productName: "SpeedyPaws",
+                productVersion: "1.0",
+                showBanner: unityShowBanner,
+            };
+
+            // By default Unity keeps WebGL canvas render target size matched with
+            // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+            // Set this to false if you want to decouple this synchronization from
+            // happening inside the engine, and you would instead like to size up
+            // the canvas DOM size and WebGL render target sizes yourself.
+            // config.matchWebGLToCanvasSize = false;
+
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                // Mobile device style: fill the whole browser client area with the game canvas:
+
+                var meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+                document.getElementsByTagName('head')[0].appendChild(meta);
+                container.className = "unity-mobile";
+
+                // To lower canvas resolution on mobile devices to gain some
+                // performance, uncomment the following line:
+                // config.devicePixelRatio = 1;
+
+                canvas.style.width = window.innerWidth + 'px';
+                canvas.style.height = window.innerHeight + 'px';
+
+                unityShowBanner('WebGL builds are not supported on mobile devices.');
+            } else {
+                // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+                canvas.style.width = "1280px";
+                canvas.style.height = "720px";
+            }
+
+            loadingBar.style.display = "block";
+
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = () => {
+                createUnityInstance(canvas, config, (progress) => {
+                    progressBarFull.style.width = 100 * progress + "%";
+                }).then((unityInstance) => {
+                    loadingBar.style.display = "none";
+                    fullscreenButton.onclick = () => {
+                        unityInstance.SetFullscreen(1);
+                    };
+                }).catch((message) => {
+                    alert(message);
+                });
+            };
+            document.body.appendChild(script);
+        </script>
+        </body>
+
+        <!---UNITY--->
+
         <div data-v-a0b16e71="" id="content-column" class="view">
             <div data-v-06385fd8="" class="airdrop">
 
@@ -177,15 +299,9 @@
                     <div data-v-06385fd8="" class="background">
                         <img data-v-06385fd8="" src="images/speedy-paws/gamebanner.png">
                     </div>
-                    <canvas id="unity-canvas" width=1640 height=1080 style="width: 1640px; height: 1080px; background: #000000; z-index: 1000; display: none;margin-top:34em"></canvas>
 
                     <h6 data-v-06385fd8="" class="title">Speedy Paws</h6>
                     <div data-v-06385fd8="" class="describe">Vroom Vroom!</div>
-
-                    <div id="gated-info" style="z-index: 10000; display: none; margin-top: 2em; padding: 1em; text-align: center; position: relative; background-color: rgba(30,30,30,0.47)">
-                        <h1>This game is currently only accessible to Presale participants.</h1>
-                        <h3>If you are a Presale participant please contact staff on our Discord.</h3>
-                    </div>
 
                     <div data-v-06385fd8="" class="button" id="play-button">
                         <img data-v-06385fd8="" src="game-detail-assets/ticket.png"><span

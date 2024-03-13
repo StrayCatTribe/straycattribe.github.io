@@ -60,9 +60,7 @@
 
     <link rel="stylesheet" href="game-detail-assets/index-6b24d4e1.css">
 
-    <script src="Data/tankb1.loader.js"></script>
     <script>
-
         document.addEventListener("fullscreenchange", function(event) {
             // Check if the document is in fullscreen mode
             if (document.fullscreenElement) {
@@ -79,43 +77,14 @@
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-
-
-
             document.querySelector("#play-button").addEventListener("click", function() {
-                // Get the unity-canvas element
-                var unityCanvas = document.querySelector("#unity-canvas");
                 var playButton = document.querySelector("#play-button");
+                var gatedText = document.querySelector("#gated-info");
 
                 console.log("button clicked")
-                // Remove the display: none style to make it visible
-                unityCanvas.style.display = "block";
                 playButton.style.display = "none";
-
-                document.documentElement.requestFullscreen()
-                    .catch(err => {
-                        console.error('Failed to enter fullscreen mode:', err);
-                    });
-
-                createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Data/tankb1.data",
-                    frameworkUrl: "Data/tankb1.framework.js",
-                    codeUrl: "Data/tankb1.wasm",
-                    streamingAssetsUrl: "StreamingAssets",
-                    companyName: "StrayCatTribe",
-                    productName: "PawsomeTankTeam",
-                    productVersion: "0.1",
-                    // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-                    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-                });
+                gatedText.style.display ="block";
             });
-            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                // Mobile device style: fill the whole browser client area with the game canvas:
-                var meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-                document.getElementsByTagName('head')[0].appendChild(meta);
-            }
         });
     </script>
 
@@ -209,10 +178,15 @@
                     <div data-v-06385fd8="" class="background">
                         <img data-v-06385fd8="" src="images/tank-images/gamebanner.png">
                     </div>
-                    <canvas id="unity-canvas" width=1640 height=1080 style="width: 1640px; height: 1080px; background: #000000; z-index: 1000; display: none; margin-top:34em;"></canvas>
 
                     <h6 data-v-06385fd8="" class="title">Pawsome Tank Team</h6>
                     <div data-v-06385fd8="" class="describe">Web3 Adventure</div>
+
+                    <div id="gated-info" style="z-index: 10000; display: none; margin-top: 2em; padding: 1em; text-align: center; position: relative; background-color: rgba(30,30,30,0.47)">
+                        <h1>This game is currently only accessible to Presale participants.</h1>
+                        <h3>If you are a Presale participant please contact staff on our Discord.</h3>
+                    </div>
+
                     <div data-v-06385fd8="" class="button" id="play-button">
                         <img data-v-06385fd8="" src="game-detail-assets/ticket.png"><span
                             data-v-06385fd8="">Play</span></div>
