@@ -80,76 +80,93 @@
 <body>
 
 
-<div id="app" data-v-app="">
-    <div data-v-a0b16e71="" class="container" >
-        <div data-v-1f5e3d8c="" data-v-a0b16e71="" id="navigation-column" class="navigation-bar" >
-            <div data-v-1f5e3d8c="" class="head"><a data-v-1f5e3d8c="" aria-current="page"
+<div id="app" >
+    <div  class="container" >
+        <div   id="navigation-column" class="navigation-bar" >
+            <div  class="head"><a  aria-current="page"
                                                     href="index.html"
                                                     class="router-link-active router-link-exact-active logo">
-                <img data-v-1f5e3d8c="" src="game-detail-assets/logo-ba4e9fbb-svg.png" style="width: 100%; height: 100%;"></a>
-
-                <ul data-v-1f5e3d8c="" id="wallet-connect" class="menu wallet">
-                    <li data-v-1f5e3d8c="" class="">
-                        <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-wallet"></i></i>
-                        </div>
-                        <div data-v-1f5e3d8c="" class="name">Connect your wallet</div>
-                    </li>
-                </ul>
+                <img  src="game-detail-assets/logo-ba4e9fbb-svg.png" style="width: 100%; height: 100%;"></a>
 
             </div>
-            <ul data-v-1f5e3d8c="" class="menu navigation-menu">
-                <li data-v-1f5e3d8c="" class="breed"><a data-v-1f5e3d8c="" href="index.html" class="breed">
-                    <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-house"></i></div>
-                    <div data-v-1f5e3d8c="" class="name">HOME</div>
+            <ul class="menu navigation-menu">
+                <script>
+                    function changeStyle(link) {
+                        var icon = link.querySelector('.icon img');
+                        var name = link.querySelector('.name');
+
+                        // Change image to grayscale
+                        icon.style.filter = "grayscale(100%)";
+                        icon.src = "icons/forbidden.png";
+
+                        // Dim text color
+                        name.style.color = "#999";
+                    }
+                </script>
+                <li class="breed"><a href="index.html" class="breed">
+                    <div class="icon">
+                        <img src="icons/multiplayer.png">
+                    </div>
+                    <div class="name">HOME</div>
                 </a></li>
 
-                <li data-v-1f5e3d8c="" class="breed"><a data-v-1f5e3d8c="" href="pawsometankteam.html" class="breed">
-                    <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-skull-crossbones"></i></div>
+                <li class="market"><a href="speedypaws.html"  class="market">
+                    <div class="icon">
+                        <img src="icons/splitscreen.png">
+                    </div>
+                    <div class="name">Speedy Paws</div>
+                </a></li>
 
-                    <div data-v-1f5e3d8c="" class="name">Pawsome Tank</div>
-                </a></li>
-                <li data-v-1f5e3d8c="" class="pet"><a data-v-1f5e3d8c="" href="kittykaboom.html" class="pet">
-                    <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-bomb"></i></div>
-                    <div data-v-1f5e3d8c="" class="name">Kitty Kaboom</div>
-                </a></li>
-                <li data-v-1f5e3d8c="" class="market"><a data-v-1f5e3d8c="" href="cubictangle.html"  class="market">
-                    <div data-v-1f5e3d8c="" class="icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                    <div data-v-1f5e3d8c="" class="name">Cubic Tangle</div>
-                </a></li>
-                <li data-v-1f5e3d8c="" class="market"><a data-v-1f5e3d8c="" href="speedypaws.html"  class="market">
-                    <div data-v-1f5e3d8c="" class="icon">
-                        <i class="fa-solid fa-car-burst"></i>
+                <li class="pet"><a href="kittykaboom.html" class="pet">
+                    <div class="icon">
+                        <img src="icons/gun.png">
                     </div>
-                    <div data-v-1f5e3d8c="" class="name">Speedy Paws</div>
+                    <div class="name">Kitty Kaboom</div>
                 </a></li>
-                <li data-v-1f5e3d8c="" class="market"><a data-v-1f5e3d8c="" href="#"  class="market">
-                    <div data-v-1f5e3d8c="" class="icon">
-                        <i class="fa-solid fa-dice"></i>
+
+                <li class="market"><a href="cubictangle.html"  class="market">
+                    <div class="icon">
+                        <img src="icons/puzzle.png">
                     </div>
-                    <div data-v-1f5e3d8c="" class="name">Jackpot Kitty</div>
+                    <div class="name">Cubic Tangle</div>
+                </a></li>
+
+                <li class="breed"><a href="pawsometankteam.html" class="breed" onmouseover="changeStyle(this)">
+                    <div class="icon">
+                        <img src="icons/coop.png">
+                    </div>
+
+                    <div class="name">Pawsome Tank</div>
+                </a></li>
+
+                <li class="market"><a href="#" onmouseover="changeStyle(this)" class="market">
+                    <div class="icon">
+                        <img src="icons/dice.png">
+                    </div>
+                    <div class="name">Jackpot Kitty</div>
                 </a></li>
             </ul>
 
-            <div data-v-1f5e3d8c="" class="activitys">
-                <div data-v-1f5e3d8c="" class="items">
-                    <a data-v-1f5e3d8c="" href="#discord" class="">
+            <div  class="activitys">
+                <div  class="items">
+                    <a  href="#discord" class="">
                         <i class="fa-brands fa-discord"></i>
                         <div style="padding-left: 1em;">
-                            <span data-v-1f5e3d8c="">Join Discord</span>
+                            <span >Join Discord</span>
                         </div>
                     </a>
 
-                    <a data-v-1f5e3d8c="" href="https://twitter.com/StrayCatTribe" class="">
+                    <a  href="https://twitter.com/StrayCatTribe" class="">
                         <i class="fa-brands fa-x-twitter"></i>
                         <div style="padding-left: 1em;">
-                            <span data-v-1f5e3d8c="">Stray Cat Tribe</span>
+                            <span >Stray Cat Tribe</span>
                         </div>
                     </a>
 
-                    <a data-v-1f5e3d8c="" href="https://twitter.com/OnOffGames" class="">
+                    <a  href="https://twitter.com/OnOffGames" class="">
                         <i class="fa-brands fa-x-twitter"></i>
                         <div style="padding-left: 1em;">
-                            <span data-v-1f5e3d8c="">On Off Games</span>
+                            <span >On Off Games</span>
                         </div>
                     </a>
 
@@ -289,31 +306,31 @@
 
         <!---UNITY--->
 
-        <div data-v-a0b16e71="" id="content-column" class="view">
-            <div data-v-06385fd8="" class="airdrop">
-                <div data-v-06385fd8="" class="home">
-                    <div data-v-06385fd8="" class="background">
-                        <img data-v-06385fd8="" src="images/kitty-images/gamebanner.png">
+        <div  id="content-column" class="view">
+            <div  class="airdrop">
+                <div  class="home">
+                    <div  class="background">
+                        <img  src="images/kitty-images/gamebanner.png">
                     </div>
-                    <h6 data-v-06385fd8="" class="title">Kitty Kaboom</h6>
-                    <div data-v-06385fd8="" class="describe">Explosive Showdown</div>
-                    <div data-v-06385fd8="" class="button" id="play-button">
-                        <img data-v-06385fd8="" src="game-detail-assets/ticket.png"><span
-                            data-v-06385fd8="">Play</span></div>
+                    <h6  class="title">Kitty Kaboom</h6>
+                    <div  class="describe">Explosive Showdown</div>
+                    <div  class="button" id="play-button">
+                        <img  src="game-detail-assets/ticket.png"><span
+                            >Play</span></div>
                 </div>
-                <div data-v-06385fd8="" class="standard">
-                    <div data-v-06385fd8="" class="tab-container">
-                        <h6 data-v-06385fd8="" class="title">Game Details</h6>
-                        <div data-v-06385fd8="" class="total"><p data-v-06385fd8="">Game Genre</p>
-                            <span data-v-06385fd8="">Action</span>
+                <div  class="standard">
+                    <div  class="tab-container">
+                        <h6  class="title">Game Details</h6>
+                        <div  class="total"><p >Game Genre</p>
+                            <span >Action</span>
                         </div>
-                        <p data-v-06385fd8="" class="describe"></p>
-                        <div data-v-06385fd8="" class="check-container"><h6 data-v-06385fd8="">Mewksplode Your Friends!</h6>
+                        <p  class="describe"></p>
+                        <div  class="check-container"><h6 >Mewksplode Your Friends!</h6>
                             <div class="row details">
                                 <div class="column-6">
-                                    <ul data-v-06385fd8="">
-                                        <li data-v-06385fd8="">
-                                            <p data-v-06385fd8="">
+                                    <ul >
+                                        <li >
+                                            <p >
                                                 <i class="fa-solid fa-users"></i>
                                                 Multiplayer
                                             </p>
@@ -321,9 +338,9 @@
                                     </ul>
                                 </div>
                                 <div class="column-6">
-                                    <ul data-v-06385fd8="">
-                                        <li data-v-06385fd8="">
-                                            <p data-v-06385fd8="">
+                                    <ul >
+                                        <li >
+                                            <p >
                                                 <i class="fa-solid fa-trophy"></i>
                                                 Achievements
                                             </p>
@@ -336,57 +353,51 @@
 
 
                         </div>
-                        <!----
-                        <button data-v-06385fd8="" class="button dragon-egg-button"><img data-v-06385fd8="" src="game-detail-assets/wallet-a4cf50e4.svg">
-                            <span data-v-06385fd8="">
-                                Connect Your Wallet
-                            </span>
-                        </button>
-                        ---->
+
                     </div>
                 </div>
-                <div data-v-06385fd8="" class="choose">
-                    <div data-v-06385fd8="" class="head">
-                        <h6 data-v-06385fd8="" class="title">
+                <div  class="choose">
+                    <div  class="head">
+                        <h6  class="title">
                         Possible Rewards
                         </h6>
                     </div>
-                    <div data-v-06385fd8="" class="dragon-egg">
-                        <div data-v-06385fd8="" class="scroll-container">
-                            <ul data-v-06385fd8="">
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                    <div  class="dragon-egg">
+                        <div  class="scroll-container">
+                            <ul >
+                                <li ><img 
                                                             src="game-detail-assets/prizes/CommonBox.png">
                                 </li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/5usdc.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/FFF.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/20Ticket.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/UnCommonBox.png"></li>
-                                <li data-v-06385fd8="">
-                                    <img data-v-06385fd8="" src="game-detail-assets/prizes/Froglana.png">
+                                <li >
+                                    <img  src="game-detail-assets/prizes/Froglana.png">
                                 </li>
 
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/50Ticket.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/10usdc.png"></li>
 
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/5xTicket.png"></li>
 
 
 
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/20USDC.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/UnCommonBox.png"></li>
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/20USDC.png"></li>
 
-                                <li data-v-06385fd8=""><img data-v-06385fd8=""
+                                <li ><img 
                                                             src="game-detail-assets/prizes/CommonBox.png">
                             </ul>
                         </div>
@@ -394,37 +405,37 @@
                 </div>
 
 
-                <div data-v-06385fd8="" class="mining">
-                    <img data-v-06385fd8="" src="images/kitty-images/kitty1.jpg">
-                    <div data-v-06385fd8="" class="info">
-                        <div data-v-06385fd8="" class="title">Feline Explosive Showdown: Kitty Kaboom</div>
-                        <p data-v-06385fd8="">
+                <div  class="mining">
+                    <img  src="images/kitty-images/kitty1.jpg">
+                    <div  class="info">
+                        <div  class="title">Feline Explosive Showdown: Kitty Kaboom</div>
+                        <p >
                             Gear up for an explosive showdown in "Feline Explosive Showdown: Kitty Kaboom," where savvy cats engage in a bombastic battle royale! Envision yourself amidst cunning feline warriors, surrounded on all sides by crafty adversaries, each determined to outmaneuver and outsmart the competition. Your objective? Strategically deploy bombs adjacent to the cubes in the center to thwart your opponents' advances while sidestepping their explosive traps. With danger lurking around every corner, only the most agile and cunning cats will emerge victorious in this thrilling game of survival. </div>
                 </div>
 
-                <div data-v-06385fd8="" class="mining">
-                    <div data-v-06385fd8="" class="info">
-                        <div data-v-06385fd8="" class="title">Master the Stray Cat Explosives Brigade in 'Kitty Kaboom'</div>
-                        <p data-v-06385fd8="">
+                <div  class="mining">
+                    <div  class="info">
+                        <div  class="title">Master the Stray Cat Explosives Brigade in 'Kitty Kaboom'</div>
+                        <p >
                             Join forces with the Stray Cat Explosives Brigade and brace yourself for an exhilarating contest where every move is critical! As you navigate the perilous battlefield, keep in mind that a single misstep could lead to your downfall. But fear not, for the taste of triumph awaits those who possess the skill and cunning to outwit their adversaries. And here's the kicker: as tensions escalate and bombs start flying, only the last cat standing will seize victory and bask in eternal glory. So, rally your comrades, refine your strategies, and prepare to outmaneuver, outsmart, and out-bomb your way to victory in Kitty Kaboom!  </div>
-                    <div data-v-06385fd8="" class="info">
-                        <img data-v-06385fd8="" src="images/kitty-images/kitty2.jpg">
+                    <div  class="info">
+                        <img  src="images/kitty-images/kitty2.jpg">
                     </div>
                 </div>
-                <div data-v-06385fd8="" class="mining">
-                    <div data-v-06385fd8="" class="info">
-                        <img data-v-06385fd8="" class="enlargeable" src="images/kitty-images/ss1.jpg">
+                <div  class="mining">
+                    <div  class="info">
+                        <img  class="enlargeable" src="images/kitty-images/ss1.jpg">
 
                     </div>
-                    <div data-v-06385fd8="" class="info">
-                        <img data-v-06385fd8="" class="enlargeable" src="images/kitty-images/ss2.jpg">
+                    <div  class="info">
+                        <img  class="enlargeable" src="images/kitty-images/ss2.jpg">
                     </div>
                 </div>
                 <h3 class="tournament-title">
                     Controls
                 </h3>
-                <div data-v-06385fd8="" class="" style="max-width: fit-content; margin-left: auto; margin-right: auto; width: 1400px; padding-bottom: 3em">
-                    <img data-v-06385fd8="" class="enlargeable" src="images/kitty-images/controls.png"> </div>
+                <div  class="" style="max-width: fit-content; margin-left: auto; margin-right: auto; width: 1400px; padding-bottom: 3em">
+                    <img  class="enlargeable" src="images/kitty-images/controls.png"> </div>
                 </div>
 
 
@@ -434,19 +445,19 @@
                 <div class="tournaments row-container ">
                     <div class="row first-position list-item-l ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         1st Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         HN7cABqLq46Es1...
                                     </p>
 
@@ -455,9 +466,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 2345
                                     </p>
@@ -466,9 +477,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                         6432
@@ -479,19 +490,19 @@
                     </div>
                     <div class="row second-position list-item-d ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         2nd Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         WGvtXfFkt9qgW...
                                     </p>
                                 </li>
@@ -499,9 +510,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 2324
                                     </p>
@@ -510,9 +521,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          6110
@@ -523,19 +534,19 @@
                     </div>
                     <div class="row third-position list-item-l ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         3rd Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         h23t4sHQ8nAxvt...
                                     </p>
                                 </li>
@@ -543,9 +554,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 2102
                                     </p>
@@ -554,9 +565,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          5230
@@ -567,19 +578,19 @@
                     </div>
                     <div class="row rest-positions list-item-d ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         4th Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         GBvnssHQ8nAxvt...
                                     </p>
                                 </li>
@@ -587,9 +598,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 1102
                                     </p>
@@ -598,9 +609,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          4730
@@ -611,19 +622,19 @@
                     </div>
                     <div class="row rest-positions list-item-l ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         5th Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         ErEwGvtXfFkt9qg...
                                     </p>
                                 </li>
@@ -631,9 +642,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 743
                                     </p>
@@ -642,9 +653,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          4112
@@ -655,19 +666,19 @@
                     </div>
                     <div class="row rest-positions list-item-d ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         6th Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         B4htHTrKANGBvns...
                                     </p>
                                 </li>
@@ -675,9 +686,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 502
                                     </p>
@@ -686,9 +697,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          3897
@@ -699,19 +710,19 @@
                     </div>
                     <div class="row rest-positions list-item-l ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         7th Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         wGvtXfFkt9qg...
                                     </p>
                                 </li>
@@ -719,9 +730,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 423
                                     </p>
@@ -730,9 +741,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          3276
@@ -743,19 +754,19 @@
                     </div>
                     <div class="row rest-positions list-item-d ">
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list first">
-                                <li class=" " data-v-06385fd8="">
+                            <ul  class="tournament-list first">
+                                <li class=" " >
                                 <span class="icon">
                                 <img src="images/game-icon-1.png">
                                    <h3>
                                         8th Place
                                    </h3>
                                 </span>
-                                    <p data-v-06385fd8="">
+                                    <p >
                                         <i class="fa-solid fa-circle-user"></i>
                                         Hidden Name
                                     </p>
-                                    <p class="dim-text" data-v-06385fd8="">
+                                    <p class="dim-text" >
                                         sHQ8nAxvgrew33...
                                     </p>
                                 </li>
@@ -763,9 +774,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list second">
-                                <li class="" data-v-06385fd8="">
-                                    <p data-v-06385fd8="">
+                            <ul  class="tournament-list second">
+                                <li class="" >
+                                    <p >
                                         <i class="fa-solid fa-gem"></i>
                                         Prize: 223
                                     </p>
@@ -774,9 +785,9 @@
                         </div>
 
                         <div class="column-3 ">
-                            <ul data-v-06385fd8="" class="tournament-list last">
-                                <li class="" data-v-06385fd8="">
-                                     <p data-v-06385fd8="">
+                            <ul  class="tournament-list last">
+                                <li class="" >
+                                     <p >
                                         <i class="fa-solid fa-award"></i>
                                         Score:
                                          2554
@@ -789,42 +800,42 @@
 
 
                 <!----
-                <div data-v-06385fd8="" class="faq"><h6 data-v-06385fd8="" class="title">FAQ</h6>
-                    <ul data-v-06385fd8="">
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">What is Project MODragon？</p><img
-                                    data-v-06385fd8="" src="game-detail-assets/down-icon-4b630aad.svg"></div>
+                <div  class="faq"><h6  class="title">FAQ</h6>
+                    <ul >
+                        <li >
+                            <div  class="head"><p >What is Project MODragon？</p><img
+                                     src="game-detail-assets/down-icon-4b630aad.svg"></div>
                                     </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">How will the distribution of 7000
-                                Genesis Dragon Eggs be conducted?</p><img data-v-06385fd8=""
+                        <li >
+                            <div  class="head"><p >How will the distribution of 7000
+                                Genesis Dragon Eggs be conducted?</p><img 
                                                                           src="game-detail-assets/down-icon-4b630aad.svg">
                             </div>
                             </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">What are the start and end times
-                                of the airdrop event?</p><img data-v-06385fd8=""
+                        <li >
+                            <div  class="head"><p >What are the start and end times
+                                of the airdrop event?</p><img 
                                                               src="game-detail-assets/down-icon-4b630aad.svg"></div>
 
                         </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">When will the genesis Dragon Eggs
-                                be airdropped?</p><img data-v-06385fd8="" src="game-detail-assets/down-icon-4b630aad.svg">
+                        <li >
+                            <div  class="head"><p >When will the genesis Dragon Eggs
+                                be airdropped?</p><img  src="game-detail-assets/down-icon-4b630aad.svg">
                             </div>
                             </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">How can I obtain MODragon
-                                (NFT)?</p><img data-v-06385fd8="" src="game-detail-assets/down-icon-4b630aad.svg"></div>
+                        <li >
+                            <div  class="head"><p >How can I obtain MODragon
+                                (NFT)?</p><img  src="game-detail-assets/down-icon-4b630aad.svg"></div>
                            </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">Do I need to manually claim the
-                                Genesis Dragon Egg after obtaining it?</p><img data-v-06385fd8=""
+                        <li >
+                            <div  class="head"><p >Do I need to manually claim the
+                                Genesis Dragon Egg after obtaining it?</p><img 
                                                                                src="game-detail-assets/down-icon-4b630aad.svg">
                             </div>
                             </li>
-                        <li data-v-06385fd8="">
-                            <div data-v-06385fd8="" class="head"><p data-v-06385fd8="">Any more information about the
-                                Genesis Dragon Egg airdrop?</p><img data-v-06385fd8=""
+                        <li >
+                            <div  class="head"><p >Any more information about the
+                                Genesis Dragon Egg airdrop?</p><img 
                                                                     src="game-detail-assets/down-icon-4b630aad.svg"></div>
 
                            </li>
