@@ -101,6 +101,10 @@
                         // Dim text color
                         name.style.color = "#999";
                     }
+                    function changeStyleBack(link, string){
+                        var icon = link.querySelector('.icon img');
+                        icon.src = string;
+                    }
                 </script>
                 <li class="breed"><a href="index.html" class="breed">
                     <div class="icon">
@@ -130,7 +134,7 @@
                     <div class="name">Cubic Tangle</div>
                 </a></li>
 
-                <li class="breed"><a href="pawsometankteam.html" class="breed" onmouseover="changeStyle(this)">
+                <li class="breed"><a href="pawsometankteam.html" class="breed" onmouseover="changeStyle(this)" onmouseleave="changeStyleBack(this,'icons/coop.png')">
                     <div class="icon">
                         <img src="icons/coop.png">
                     </div>
@@ -138,7 +142,7 @@
                     <div class="name">Pawsome Tank</div>
                 </a></li>
 
-                <li class="market"><a href="#" onmouseover="changeStyle(this)" class="market">
+                <li class="market"><a href="#" onmouseover="changeStyle(this)" onmouseleave="changeStyleBack(this,'icons/dice.png')"class="market">
                     <div class="icon">
                         <img src="icons/dice.png">
                     </div>
@@ -335,8 +339,8 @@
                                 <div class="column-6">
                                     <ul >
                                         <li >
-                                            <p >
-                                                <i class="fa-solid fa-users"></i>
+                                            <img src="icons/multiplayer.png" style="width: 4em">
+                                            <p>
                                                 Multiplayer
                                             </p>
                                         </li>
@@ -345,11 +349,10 @@
                                 <div class="column-6">
                                     <ul >
                                         <li >
-                                            <p >
-                                                <i class="fa-solid fa-trophy"></i>
-                                                Achievements
+                                            <img src="icons/splitscreen.png" style="width: 4em">
+                                            <p>
+                                                Splitscreen
                                             </p>
-                                            <!---->
                                         </li>
                                     </ul>
                                 </div>
