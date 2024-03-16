@@ -1570,7 +1570,7 @@ button {
     }
 
     .notice .icon {
-        width: 177
+        width: 177px;
     }
 
     .notice .name {
@@ -1618,14 +1618,18 @@ button {
         padding-top: 0vw;
         margin-top: 4vw;
         margin-left: -2em;
-
     }
+
 
     .navigation-menu .icon img {
         width: 100%;
         height: auto;
         -o-object-position: center;
         object-position: center
+    }
+
+    .navigation-menu .home-icon{
+        margin-left: 0.5em;
     }
 
     .navigation-menu .name {
