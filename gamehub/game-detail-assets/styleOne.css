@@ -350,8 +350,8 @@
     left: 0;
     bottom: 0;
     height: 40vw;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 13, 20, 0)), to(#070d14));
-    background: linear-gradient(180deg, rgba(7, 13, 20, 0), #070d14 100%)
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 13, 20, 0)), to(#070d14b8));
+    background: linear-gradient(180deg, rgba(7, 13, 20, 0), #070d14b8 100%);
 }
 
 .home .title, .home .describe, .home .button, .home .count-down {
