@@ -58482,7 +58482,7 @@ const oO = e => (kn("data-v-dd42aa75"), e = e(), xn(), e), sO = {class: "modal-b
         }), [["__scopeId", "data-v-a0b16e71"]]),
         children: [{
             path: "",
-            component: () => Fc((() => import("./index-efbd89bd.js")), ["assets/index-efbd89bd.js", "assets/mbox-04420c80.js", "assets/egg-e601900a.js", "assets/wallet-85053a31.js", "assets/down-icon-08217edd.js", "assets/index-6b24d4e1.css"])
+            component: () => Fc((() => import("./index-efbd89bd.js")), ["assets/index-efbd89bd.js", "assets/mbox-04420c80.js", "assets/egg-e601900a.js", "assets/wallet-85053a31.js", "assets/down-icon-08217edd.js", "assets/styleOne.css"])
         }, {
             path: "market",
             name: "Market",
