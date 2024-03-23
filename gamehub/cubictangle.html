@@ -10,7 +10,15 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="icons/fluffy.png" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DVYE0GRNH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'G-5DVYE0GRNH');
+    </script>
 
     <script type="module">import.meta.url;
     import("_").catch(() => 1);
@@ -79,12 +87,9 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#play-button").addEventListener("click", function() {
-                var playButton = document.querySelector("#play-button");
-                var gatedText = document.querySelector("#gated-info");
 
-                console.log("button clicked")
-                playButton.style.display = "none";
-                gatedText.style.display ="block";
+                window.location.href = "https://strayhub.xyz/access/cubic-tangle/";
+
             });
         });
 </script>
@@ -190,6 +195,7 @@
             </div>
         </div>
 
+
         <div   id="content-column" class="view">
             <div  class="airdrop">
 
@@ -200,14 +206,14 @@
                     </div>
 
                     <h6  class="title">Cubic Tangle</h6>
+                    <div class="describe" style="background-color: rgba(0,0,0,0.65); border-radius: 10px; padding: 0.3em;">Presale buyers access only!</div>
 
-                    <div id="countdown" style="z-index: 10000; display: block; font-family: 'Courier New'; margin-top: 2em; padding: 1em; text-align: center; position: relative; background-color: rgba(40,52,129,0.47)">
-                        <h1>Presale buyers access only!</h1>
-                    </div>
+                    <div class="button" style="background-color: #016fb9;" id="play-button">
+                        <img  src="icons/cat.png">
+                        <span>Play</span></div>
 
-                    <div class="button" id="play-button" style="display: none">
-                        <img  src="game-detail-assets/ticket.png"><span
-                            >Play</span></div>
+
+
                 </div>
 
                 <div  class="standard">
