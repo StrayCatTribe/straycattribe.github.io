@@ -1,27 +1,24 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "strayScorer";
-$password = "B4htHTrKANGBvnssHQ8nA";
-$database = "scoredb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Include database connection parameters
+include 'db_config.php';
 
 // Get the selected game ID from the query parameters
 $gameId = isset($_GET['gameId']) ? intval($_GET['gameId']) : null;
 
+// Get the selected event type from the query parameters
+$eventType = isset($_GET['eventType']) ? $_GET['eventType'] : null;
+
 // Prepare SQL statement
-$sql = "SELECT id, gameId, player_name, score, ip_address, event_type, event_time FROM scores";
+$sql = "SELECT id, gameId, player_name, score, ip_address, event_type, event_time FROM scores WHERE 1";
 
 // If a specific game ID is selected, add a WHERE clause to filter by game ID
 if ($gameId !== null) {
-    $sql .= " WHERE gameId = $gameId";
+    $sql .= " AND gameId = $gameId";
+}
+
+// If a specific event type is selected, add a WHERE clause to filter by event type
+if ($eventType !== null) {
+    $sql .= " AND event_type = '$eventType'";
 }
 
 $result = $conn->query($sql);
