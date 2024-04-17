@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Tank Team - Stray Cat Tribe HUB</title>
+    <link rel="stylesheet" href="game-detail-assets/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="icons/fluffy.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DVYE0GRNH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5DVYE0GRNH');
+    </script>
+
+    <script type="module">import.meta.url;
+    import("_").catch(() => 1);
+
+    async function* g() {
+    };
+    if (location.protocol != "file:") {
+        window.__vite_is_modern_browser = true
+    }
+    </script>
+    <script type="module">!function () {
+        if (window.__vite_is_modern_browser) return;
+        console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");
+        var e = document.getElementById("vite-legacy-polyfill"), n = document.createElement("script");
+        n.src = e.src, n.onload = function () {
+            System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))
+        }, document.body.appendChild(n)
+    }();</script>
+
+    <style>
+        @font-face {
+            font-family: Poppins-Regular;
+            src: url(fonts/Poppins-Regular.ttf)
+        }
+
+        @font-face {
+            font-family: Poppins-Bold;
+            src: url(fonts/Poppins-Bold.ttf)
+        }
+
+        @font-face {
+            font-family: Poppins-SemiBold;
+            src: url(fonts/Poppins-SemiBold.ttf)
+        }
+
+        @font-face {
+            font-family: Poppins-Black;
+            src: url(fonts/Poppins-Black.ttf)
+        }
+
+        @font-face {
+            font-family: Poppins-Medium;
+            src: url(fonts/Poppins-Medium.ttf)
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="game-detail-assets/styleOne.css">
+
+    <script>
+        document.addEventListener("fullscreenchange", function(event) {
+            // Check if the document is in fullscreen mode
+            if (document.fullscreenElement) {
+                //
+                //
+                //
+            } else {
+                var contentColumn = document.querySelector("#content-column");
+                var navigation = document.querySelector("#navigation-column");
+
+                contentColumn.style.marginLeft = "15.03906vw";
+                navigation.style.display = "block";
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#play-button").addEventListener("click", function() {
+
+                var gatedText = document.querySelector("#gated-info");
+
+                console.log("button clicked")
+                gatedText.style.display ="block";
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<div id="app">
+    <div class="container">
+        <div  id="navigation-column" class="navigation-bar">
+            <div  class="head"><a  aria-current="page"
+                                                    href="index.html"
+                                                    class="router-link-active router-link-exact-active logo">
+                <img  src="game-detail-assets/logo-ba4e9fbb-svg.png" style="width: 100%; height: 100%;"></a>
+
+            </div>
+            <ul class="menu navigation-menu">
+                <script>
+                    function changeStyle(link) {
+                        var icon = link.querySelector('.icon img');
+                        var name = link.querySelector('.name');
+
+                        // Change image to grayscale
+                        icon.style.filter = "grayscale(100%)";
+                        icon.src = "icons/forbidden.png";
+
+                        // Dim text color
+                        name.style.color = "#999";
+                    }
+
+                    function changeStyleBack(link, string){
+                        var icon = link.querySelector('.icon img');
+                        icon.src = string;
+                    }
+                </script>
+                <li class="market"><a href="https://strayhub.xyz/access/wp-login.php" class="market" onmouseover="changeStyleBack(this, 'icons/homeFill.png')" onmouseleave="changeStyleBack(this, 'icons/home.png')">
+
+                    <div class="name" style="padding-left: 2em; color: orangered; border: orangered 1px; font-size: large; font-weight: 600;">Connect Wallet</div>
+                </a></li>
+
+                <li class="market"><a href="speedypaws.html"  class="market" onmouseover="changeStyleBack(this, 'icons/carFill.png')" onmouseleave="changeStyleBack(this, 'icons/car.png')">
+                    <div class="icon">
+                        <img src="icons/car.png">
+                    </div>
+                    <div class="name">Speedy Paws</div>
+                </a></li>
+
+                <li class="market"><a href="kittykaboom.html" class="market" onmouseover="changeStyleBack(this, 'icons/bombFill.png')" onmouseleave="changeStyleBack(this, 'icons/bomb.png')">
+                    <div class="icon">
+                        <img src="icons/bomb.png">
+                    </div>
+                    <div class="name">Kitty Kaboom</div>
+                </a></li>
+
+                <li class="market"><a href="flykitty.html" class="market">
+                    <div class="icon">
+                        <img src="icons/airplane.png">
+                    </div>
+                    <div class="name">Fly Kitty!</div>
+                </a></li>
+
+                <li class="market"><a href="cubictangle.html"  class="market" >
+                    <div class="icon">
+                        <img src="icons/puzzle.png">
+                    </div>
+                    <div class="name">Cubic Tangle</div>
+                </a></li>
+
+                <li class="breed"><a href="pawsometankteam.html" class="breed" >
+                    <div class="icon">
+                        <img src="icons/tank.png">
+                    </div>
+
+                    <div class="name">Pawsome Tank</div>
+                </a></li>
+
+                
+            </ul>
+
+            <div  class="activitys">
+                <div  class="items">
+                    <a  href="#discord" class="">
+                        <i class="fa-brands fa-discord"></i>
+                        <div style="padding-left: 1em;">
+                            <span >Join Discord</span>
+                        </div>
+                    </a>
+
+                    <a  href="https://twitter.com/StrayCatTribe" class="">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <div style="padding-left: 1em;">
+                            <span >Stray Cat Tribe</span>
+                        </div>
+                    </a>
+
+                    <a  href="https://twitter.com/OnOffGames" class="">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <div style="padding-left: 1em;">
+                            <span >On Off Games</span>
+                        </div>
+                    </a>
+
+               </div>
+            </div>
+        </div>
+
+        <div id="content-column" class="view" style="overflow: hidden;">
+            <div  class="airdrop">
+                <div  class="home">
+                    <div  class="background">
+                        <img  src="images/plane-images/gamebanner.jpg">
+                    </div>
+
+                    <h6  class="title">Fly Kitty!</h6>
+
+                    <a href="https://strayhub.xyz/access/flykitty/">
+                        <div  class="button" id="play-button" style="background-color: #016fb9;">
+                            <img  src="icons/cat.png">
+                            <span>Play</span></div>
+                    </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="teleport-target"></div>
+<script nomodule="">!function () {
+    var e = document, t = e.createElement("script");
+    if (!("noModule" in t) && "onbeforeload" in t) {
+        var n = !1;
+        e.addEventListener("beforeload", (function (e) {
+            if (e.target === t) n = !0; else if (!e.target.hasAttribute("nomodule") || !n) return;
+            e.preventDefault()
+        }), !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+    }
+}();</script>
+<script nomodule="" crossorigin="" id="vite-legacy-polyfill" src="game-detail-assets/polyfills-legacy-65261e1a.js"></script>
+<script nomodule="" crossorigin="" id="vite-legacy-entry"
+        data-src="/dragonmo/assets/index-legacy-b3a89adb.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+
+
+<!----><!----></body>
+</html>

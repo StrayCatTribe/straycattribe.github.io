@@ -1,0 +1,213 @@
+
+
+.row{
+    display: flex;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+.column-3 {
+    flex: 0 0 33%; /* This will make each column take up 33% of the row */
+    max-width: 33%; /* Optional: Prevent columns from expanding beyond 33% */
+    box-sizing: border-box;
+}
+
+.row-container{
+        display: flex;
+        flex-wrap: wrap; /* Allow rows to wrap if needed */
+}
+
+.row .column-6{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    flex-direction: column;
+}
+
+.bg-index {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bg-index video {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+
+    html{
+    }
+    .bg-index {
+        overflow: hidden;
+    }
+    .bg-index video {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .bg-index {
+        position: absolute;
+        width: auto;
+        overflow: hidden;
+        height: 1000vh;
+
+    }
+    .bg-index video{
+        width: auto;
+        overflow: hidden;
+        height: 100vh;
+    }
+}
+.fullscreenable{
+}
+
+.enlarged {
+    width: 90vw; /* Set the width to 90% of the viewport width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+}
+
+.tournaments{
+    width: 90%;
+    padding: 2em;
+    padding-left: 13em;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+
+    font-family: Poppins-Regular, xiang-teng, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: #fff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tournament-list{
+    width: 100%;
+}
+.tournament-list-data{
+    width: 100%;
+}
+
+
+.tournament-title{
+    font-size: 1.67969vw;
+    text-align: center;
+    font-family: Poppins-Bold;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+}
+.tournaments .title{
+    font-size: 1.67969vw;
+    text-align: center;
+    font-family: Poppins-Bold;
+    font-weight: 700;
+    display: flex;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.tournaments .icon{
+    display: flex;
+    margin-right: 5em;
+    position: absolute;
+}
+.tournaments img{
+    width: 2em;
+    height: 2em;
+}
+
+.tournaments p {
+    padding-left: 10em;
+}
+.tournaments h3{
+    padding-left: 1em;
+}
+.tournaments .data{
+    text-align: right;
+}
+
+.list-item-l{
+    background-color: #181818;
+    box-sizing: border-box;
+    padding: 2em;
+    width: 100%;
+    margin: 1em;
+}
+
+.list-item-d{
+    background-color: #000000;
+    box-sizing: border-box;
+    padding: 2em;
+    width: 100%;
+    margin: 1em;
+}
+
+.first-position{
+    border-color: rgba(116, 217, 8);
+    box-shadow: rgb(116, 217, 8) 10px 10px 25px  5px;
+}
+.second-position{
+    border-color: rgba(128, 126, 126);
+    box-shadow: rgba(128, 126, 126) 10px 10px 25px  5px;
+}
+
+.third-position{
+    border-color: rgba(189, 86, 31);
+    box-shadow: rgb(189, 86, 31) 10px 10px 25px  5px;
+    margin-bottom: 4em;
+}
+.rest-positions{
+    border-style: none;
+}
+
+.details{
+    border-style: none;
+}
+
+.tournament-list li{
+    border-width: 3px 0 3px 3px;
+    z-index: 10;
+}
+
+.tournament-list-data li{
+    border-width: 3px 3px 3px 0;
+    z-index: 20;
+}
+.data{
+}
+
+.row .column-3 .first li{
+    border-width: 3px 0 3px 3px;
+}
+.row .column-3 .second li{
+    border-width: 3px 0 3px 0;
+    border-radius: 0;
+}
+.row .column-3 .last li{
+    border-width: 3px 3px 3px 0;
+}
+
+.dim-text{
+    color: dimgray;
+}
