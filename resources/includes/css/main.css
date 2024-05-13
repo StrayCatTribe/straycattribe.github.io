@@ -179,6 +179,12 @@ html {
 .oog-text-block{
     display: flex;
     position: absolute;
+    font-family: Poppins, sans-serif;
+    color: #232323;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-shadow: 1px 1px 1px  rgb(255, 255, 255);
+
     top:0%;
     width: 75%;
     left:22.5%;
